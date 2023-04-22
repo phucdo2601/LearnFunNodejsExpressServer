@@ -1,12 +1,16 @@
-const http = require('http');
-const server = http.createServer((req, res) => {
-    console.log('run request...');
-    res.setHeader('Content-Type', 'text/html');
-    res.write('<h1>Hello, world!</h1>');
-    res.write('<h2>From PhucDn</h2>');
-    res.end();
-})
+const express = require('express');
 
-server.listen(3000, 'localhost', ()=>{
-    console.log('Node.JS server is running on port: 3000');
+const app = express();
+
+const port = 3010;
+app.get('/', (req, res) =>{
+    res.send("Hello Everyone to my first basic node express server!");
+});
+
+app.get('/about', (req, res) =>{
+    res.send("I am Phuc Do!");
+});
+
+app.listen(port, ()=>{
+    console.log(`Example app listening on port ${port} and htpp://localhost:${port}`);
 });
