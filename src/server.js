@@ -1,10 +1,13 @@
-const express = require('express');
+import express from "express";
+import configViewEngine from "./configs/viewEngine";
 
 const app = express();
 
-const port = 3010;
+configViewEngine(app);
+
+const port = 8080;
 app.get('/', (req, res) =>{
-    res.send("Hello Everyone to my first basic node express server!");
+   res.render("index.ejs");
 });
 
 app.get('/about', (req, res) =>{
