@@ -15,7 +15,8 @@ let getHomePage = (req, res) => {
       });
     });
     return res.render("index.ejs", {
-      dataUser: JSON.stringify(data),
+      dataUser: data,
+      test: "abc string test",
     });
   });
 };
