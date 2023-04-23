@@ -1,9 +1,10 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
-import * as dotenv from 'dotenv';
+import * as dotenv from "dotenv";
 import initWebRoute from "./route/web";
+import connection from "./configs/connectDB";
 
-dotenv.config()
+dotenv.config();
 const app = express();
 
 //set up view engine
@@ -15,7 +16,8 @@ initWebRoute(app);
 const port = process.env.PORT || 8080;
 console.log(port);
 
-
-app.listen(port, ()=>{
-    console.log(`Example app listening on port ${port} and htpp://localhost:${port}`);
+app.listen(port, () => {
+  console.log(
+    `Example app listening on port ${port} and htpp://localhost:${port}`
+  );
 });
