@@ -11,6 +11,8 @@ const initWebRoute = (app) => {
     res.send("I am Phuc Do!");
   });
 
+  router.post("/create-new-user", homeController.createNewUser);
+
   return app.use("/", router);
 };
 

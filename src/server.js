@@ -7,6 +7,14 @@ import connection from "./configs/connectDB";
 dotenv.config();
 const app = express();
 
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+
+app.use(express.json());
+
 //set up view engine
 configViewEngine(app);
 
